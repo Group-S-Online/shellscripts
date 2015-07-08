@@ -8,15 +8,11 @@
 # store the current dir
 CUR_DIR=$(pwd)
 
-# copy credentials
-
-echo "**************  \033[33mCOPY CREDENTIALS\033[0m";
-cp -r /root/ssh /root/.ssh
 
 # set up proxy 
 echo "**************  \033[33mSETUP PROXY\033[0m";
-export http_proxy="http://192.168.105.41:8080"
-export https_proxy="http://192.168.105.41:8080"
+export http_proxy=$GSPROXY
+export https_proxy=$GSPROXY
 export no_proxy="0.0.0.0,localhost,.groups.local,127.0.1.1,127.0.0.1,.groups.be"
 
 # test if git is installed
